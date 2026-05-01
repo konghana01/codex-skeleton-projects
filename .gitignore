@@ -1,0 +1,13 @@
+.DS_Store
+.idea/
+.env
+*.log
+tmp/
+dist/
+build/
+coverage/
+node_modules/
+
+# Generated projects should usually become their own repositories.
+projects/*
+!projects/registry.md

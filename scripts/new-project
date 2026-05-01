@@ -1,0 +1,96 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+usage() {
+  cat <<'USAGE'
+Usage:
+  scripts/new-project <project-name> [template]
+  scripts/new-project --list
+
+Examples:
+  scripts/new-project my-idea
+  scripts/new-project my-idea scratch
+USAGE
+}
+
+list_templates() {
+  find "$ROOT_DIR/templates" -mindepth 1 -maxdepth 1 -type d -exec basename {} \; | sort
+}
+
+replace_placeholders() {
+  local file="$1"
+  local project_name="$2"
+  local template_name="$3"
+  local tmp_file
+
+  [ -f "$file" ] || return 0
+  tmp_file="$file.tmp.$$"
+  awk \
+    -v project_name="$project_name" \
+    -v template_name="$template_name" \
+    '{ gsub(/__PROJECT_NAME__/, project_name); gsub(/__TEMPLATE_NAME__/, template_name); print }' \
+    "$file" > "$tmp_file"
+  mv "$tmp_file" "$file"
+}
+
+if [ "${1:-}" = "--help" ] || [ "${1:-}" = "-h" ]; then
+  usage
+  exit 0
+fi
+
+if [ "${1:-}" = "--list" ]; then
+  list_templates
+  exit 0
+fi
+
+PROJECT_NAME="${1:-}"
+TEMPLATE_NAME="${2:-scratch}"
+
+if [ -z "$PROJECT_NAME" ]; then
+  usage
+  exit 2
+fi
+
+if [[ ! "$PROJECT_NAME" =~ ^[A-Za-z0-9][A-Za-z0-9._-]*$ ]]; then
+  echo "Invalid project name: $PROJECT_NAME" >&2
+  echo "Use letters, numbers, dots, underscores, and hyphens. Do not use slashes or spaces." >&2
+  exit 2
+fi
+
+TEMPLATE_DIR="$ROOT_DIR/templates/$TEMPLATE_NAME"
+TARGET_DIR="$ROOT_DIR/projects/$PROJECT_NAME"
+REGISTRY_FILE="$ROOT_DIR/projects/registry.md"
+
+if [ ! -d "$TEMPLATE_DIR" ]; then
+  echo "Unknown template: $TEMPLATE_NAME" >&2
+  echo "Available templates:" >&2
+  list_templates >&2
+  exit 2
+fi
+
+if [ -e "$TARGET_DIR" ]; then
+  echo "Project already exists: $TARGET_DIR" >&2
+  exit 1
+fi
+
+mkdir -p "$TARGET_DIR"
+cp -R "$TEMPLATE_DIR/." "$TARGET_DIR"
+
+replace_placeholders "$TARGET_DIR/README.md" "$PROJECT_NAME" "$TEMPLATE_NAME"
+replace_placeholders "$TARGET_DIR/AGENTS.md" "$PROJECT_NAME" "$TEMPLATE_NAME"
+replace_placeholders "$TARGET_DIR/notes/README.md" "$PROJECT_NAME" "$TEMPLATE_NAME"
+
+cat > "$TARGET_DIR/.harness-project" <<EOF
+name=$PROJECT_NAME
+template=$TEMPLATE_NAME
+created_at=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+EOF
+
+if [ -f "$REGISTRY_FILE" ]; then
+  printf '| %s | %s | active | `%s` | - | 첫 milestone을 정의한다. |\n' \
+    "$PROJECT_NAME" "$TEMPLATE_NAME" "projects/$PROJECT_NAME" >> "$REGISTRY_FILE"
+fi
+
+echo "Created project: $TARGET_DIR"
