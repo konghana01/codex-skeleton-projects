@@ -4,20 +4,7 @@
 
 ## 관리 위치
 
-하네스에서 관리하는 skill source는 repo 안의 `skills/<skill-name>/`에 둡니다.
-
-```text
-skills/
-  skill-name/
-    SKILL.md
-    agents/
-      openai.yaml
-    references/
-    scripts/
-    assets/
-```
-
-`$CODEX_HOME/skills` 또는 `~/.codex/skills`는 설치 위치입니다. repo의 `skills/`는 source of truth이고, 설치 위치는 실행을 위한 배포 결과로 봅니다.
+skill source, repo-local exposure, Claude exposure, local install 위치는 `docs/skills/package-contract.md`를 따릅니다. lifecycle 문서는 생성, 변경, review, 폐기 절차만 정의합니다.
 
 ## 생성 조건
 
@@ -31,22 +18,10 @@ skills/
 
 조건을 만족하지 않으면 `AGENTS.md`, `docs/`, `prompts/` 중 더 낮은 비용의 계층을 사용합니다.
 
-## Package 기준
-
-skill package는 자기 안에서 응집되어야 합니다.
-
-- `SKILL.md`: trigger와 실행 절차
-- `references/`: 길거나 조건부로 필요한 상세 문서
-- `scripts/`: deterministic repeated operation
-- `assets/`: output에 복사하거나 사용할 template, image, font, sample data
-- `agents/openai.yaml`: UI metadata, 필요할 때만
-
-skill package 밖의 문서를 깊게 참조하지 않습니다. 하네스 전체 원칙은 `docs/`에 두되, skill 실행에 필요한 구체 지식은 package 내부에 둡니다.
-
 ## 생성 절차
 
 1. `prompts/create-skill.md`를 사용합니다.
-2. `/skill-creator`를 기준으로 skill을 초기화합니다.
+2. `/skill-creator`, `docs/skills/package-contract.md`, `docs/skills/codex-skill-guidelines.md`를 기준으로 skill을 초기화합니다.
 3. source 위치는 기본적으로 `skills/<skill-name>/`를 사용합니다.
 4. `SKILL.md`의 `description`에 trigger 조건을 구체적으로 씁니다.
 5. 필요한 resource만 추가합니다.
@@ -64,10 +39,12 @@ python3 "${CODEX_HOME:-$HOME/.codex}/skills/.system/skill-creator/scripts/quick_
 skill을 수정할 때는 다음을 확인합니다.
 
 - trigger가 너무 넓어지지 않았는가?
+- `description`만 읽고 trigger/non-trigger가 판단되는가?
 - root `AGENTS.md`나 governance 문서와 충돌하지 않는가?
 - reference가 `SKILL.md`와 중복되지 않는가?
 - script를 바꿨다면 대표 경로를 실행했는가?
 - `agents/openai.yaml`이 `SKILL.md`와 맞는가?
+- `.agents/skills/`, `.claude/skills/` 또는 install 위치에 노출된 copy가 있다면 source와 동기화가 필요한가?
 
 ## Review 기준
 
@@ -82,6 +59,7 @@ skill review는 code review와 다르게 trigger 품질을 우선합니다.
 - skill 본문이 절차 중심인가?
 - reference/script/asset이 package 안에 응집되어 있는가?
 - validation이 재현 가능한가?
+- trigger test에 가까운 yes/no 예시가 모두 있는가?
 
 ## 폐기 기준
 
@@ -93,4 +71,4 @@ skill review는 code review와 다르게 trigger 품질을 우선합니다.
 - `SKILL.md`가 단순 prompt와 다르지 않습니다.
 - resource가 없고 절차도 짧습니다.
 
-폐기할 때는 해당 workflow가 이동한 위치를 `docs/rules-and-skills.md` 또는 관련 prompt에 남깁니다.
+폐기할 때는 해당 workflow가 이동한 위치를 `docs/governance/rules-and-skills.md` 또는 관련 prompt에 남깁니다.

@@ -12,7 +12,7 @@ Context to read first:
 - README.md
 - AGENTS.md
 - notes/decisions.md
-- docs/async-workflow.md, if available
+- docs/workflows/async-workflow.md, if available
 
 Constraints:
 - finding과 직접 관련된 변경만 해줘.

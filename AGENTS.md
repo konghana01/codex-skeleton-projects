@@ -8,7 +8,7 @@
 
 ## 작업 전 확인
 
-- `README.md`, `projects/registry.md`, `docs/governance.md`, `docs/context-map.md`, 관련 `docs/` 파일을 먼저 읽습니다.
+- `README.md`, `projects/registry.md`, `docs/README.md`, `docs/governance/governance.md`, `docs/governance/context-map.md`, 관련 `docs/` 파일을 먼저 읽습니다.
 - 생성된 프로젝트를 작업할 때는 해당 프로젝트의 `AGENTS.md`와 `README.md`도 읽습니다.
 - 대상 파일에 사용자가 이미 수정한 내용이 있는지 확인하고, 관련 없는 변경은 보존합니다.
 
@@ -35,8 +35,11 @@
 - 같은 동작이 최소 두 개 프로젝트에서 반복되기 전에는 script로 공통화하지 않습니다.
 - 프롬프트는 task-focused로 유지합니다. 필요한 결과, 먼저 읽을 컨텍스트, 실행할 검사를 명확히 적습니다.
 - 프로젝트 생성 또는 clone 직후 첫 목적 정리에는 `prompts/start-project.md`를 사용합니다.
-- guidance가 rules, prompts, scripts, Codex skills 중 어디에 속하는지는 `docs/rules-and-skills.md`를 기준으로 판단합니다.
-- 문서와 skill의 source of truth는 `docs/governance.md`, `docs/context-map.md`, `docs/skill-lifecycle.md`를 기준으로 관리합니다.
+- guidance가 rules, prompts, scripts, Codex skills 중 어디에 속하는지는 `docs/governance/rules-and-skills.md`를 기준으로 판단합니다.
+- 문서와 skill의 source of truth는 `docs/governance/governance.md`, `docs/governance/context-map.md`, `docs/skills/skill-lifecycle.md`를 기준으로 관리합니다.
+- 새 문서는 하나의 역할만 가져야 하며, 배치와 분리 기준은 `docs/governance/documentation.md`를 따릅니다.
+- 반복 작업에서 얻은 재사용 가능한 학습은 `docs/governance/improvement-loop.md` 기준으로 선별하고, entry는 `docs/governance/improvement-history.md`에 남깁니다.
+- Codex skill을 생성, 수정, 검토할 때는 `/skill-creator`, `docs/skills/package-contract.md`, `docs/skills/codex-skill-guidelines.md`를 먼저 읽습니다.
 - 사람이 읽는 규칙과 프롬프트 본문은 한국어 우선으로 작성하고, 파일명/명령어/코드 식별자는 영어를 유지합니다.
 - secret을 commit하지 않습니다. `.env`는 local에만 두고, 공유 가능한 값만 `.env.example`에 둡니다.
 

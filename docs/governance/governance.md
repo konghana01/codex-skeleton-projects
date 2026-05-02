@@ -9,6 +9,8 @@
 - `docs/`에는 오래 변하지 않을 맥락, 철학, convention, lifecycle 기준을 둡니다.
 - `prompts/`에는 반복 작업을 시작하기 위한 요청 템플릿을 둡니다.
 - `skills/`에는 꼭 필요한 경우에만 만드는 구체적이고 검증 가능한 Codex skill package source를 둡니다.
+- `.agents/skills/`는 필요할 때 `skills/` source package를 Codex가 repo-local skill로 읽게 하는 노출 위치입니다.
+- `.claude/skills/`는 필요할 때 `skills/` source package를 Claude Code project skill로 읽게 하는 노출 위치입니다.
 - `notes/`에는 프로젝트별 현재 상태, 결정, follow-up을 둡니다.
 
 ## 계층 우선순위
@@ -17,17 +19,22 @@
 
 1. root `AGENTS.md`
 2. generated project `AGENTS.md`
-3. `docs/governance.md`
-4. 다른 `docs/*.md`
+3. `docs/governance/governance.md`
+4. 다른 `docs/**/*.md`
 5. `prompts/*.md`
 6. `skills/<skill-name>/`
-7. project `notes/*.md`
+7. `.agents/skills/<skill-name>/`, 노출된 copy가 있다면
+8. `.claude/skills/<skill-name>/`, 노출된 copy가 있다면
+9. project `notes/*.md`
 
 낮은 계층은 높은 계층을 override하지 않습니다. 낮은 계층은 높은 계층을 더 구체적으로 실행하는 역할만 합니다.
+`.agents/skills/`와 `.claude/skills/`는 `skills/` source를 노출하는 실행 위치이므로, 둘이 충돌하면 `skills/`가 우선합니다.
 
 ## 문서가 담아야 할 것
 
 문서는 큰 맥락에서 오래 유지될 내용을 담습니다.
+
+문서 하나는 한 가지 역할만 가져야 합니다. 문서 배치와 분리 기준은 `docs/governance/documentation.md`를 따릅니다.
 
 좋은 문서 내용:
 
@@ -37,6 +44,8 @@
 - 검증 철학
 - skill 관리 기준
 - GitHub/PR 운영 기준
+- 하네스 평가 기준
+- 반복 학습과 개선 기록 기준
 
 문서에 두지 말아야 할 내용:
 
@@ -47,6 +56,7 @@
 - credential, token, secret
 
 일시적 내용은 issue, PR, `notes/todos.md`, task prompt에 둡니다.
+반복 재사용할 가치가 생긴 학습만 `docs/governance/improvement-loop.md` 기준으로 `docs/governance/improvement-history.md`에 승격합니다.
 
 ## Rule 기준
 
@@ -84,17 +94,22 @@ skill은 다음 조건을 만족할 때만 만듭니다.
 
 skill은 하네스의 철학을 override하지 않습니다. skill은 하네스 철학을 구체적 workflow로 실행합니다.
 
+Codex skill을 만들거나 수정할 때는 `/skill-creator`, `docs/skills/package-contract.md`, `docs/skills/codex-skill-guidelines.md`를 먼저 읽습니다. 공식 문서나 product behavior가 바뀌었을 가능성이 있으면 공식 문서를 다시 확인합니다.
+
 ## 변경 절차
 
 하네스 governance를 바꿀 때는 다음 순서로 확인합니다.
 
 1. root `AGENTS.md`를 읽습니다.
-2. `docs/governance.md`와 `docs/context-map.md`를 읽습니다.
-3. 변경이 rule, docs, prompt, skill 중 어디에 속하는지 판단합니다.
-4. 중복 문서가 생기면 한 곳을 source of truth로 정하고 다른 곳은 링크합니다.
-5. `./scripts/doctor`를 실행합니다.
+2. `docs/governance/governance.md`와 `docs/governance/context-map.md`를 읽습니다.
+3. `docs/governance/documentation.md`를 읽고 문서 역할이 하나인지 확인합니다.
+4. 변경이 rule, docs, prompt, skill, script, notes 중 어디에 속하는지 판단합니다.
+5. 반복 학습이면 `docs/governance/improvement-loop.md` 기준으로 `docs/governance/improvement-history.md`에 기록할지 판단합니다.
+6. 중복 문서가 생기면 한 곳을 source of truth로 정하고 다른 곳은 링크합니다.
+7. `./scripts/doctor`를 실행합니다.
 
 반복 가능한 거버넌스 변경에는 `prompts/governance-change.md`를 사용합니다. skill package review에는 `prompts/skill-review.md`를 사용합니다.
+하네스 자체의 정량 평가는 `docs/evaluation/rubric.md`와 `prompts/evaluate-harness.md`를 사용하고, 현재 결과는 `docs/evaluation/current-assessment.md`에 둡니다.
 
 ## 완료 기준
 

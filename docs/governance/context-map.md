@@ -9,8 +9,9 @@
 1. `AGENTS.md`
 2. `README.md`
 3. `projects/registry.md`
-4. 관련 `docs/*.md`
-5. 관련 `prompts/*.md`, task prompt가 있을 때
+4. `docs/README.md`
+5. 관련 `docs/**/*.md`
+6. 관련 `prompts/*.md`, task prompt가 있을 때
 
 생성 프로젝트에서 작업할 때:
 
@@ -19,7 +20,7 @@
 3. project `README.md`
 4. project `notes/decisions.md`
 5. project `notes/todos.md`
-6. task와 관련된 root `docs/*.md`
+6. task와 관련된 root `docs/**/*.md`
 
 ## 상황별 Context
 
@@ -29,9 +30,11 @@
 
 - `AGENTS.md`
 - `README.md`
-- `docs/governance.md`
-- `docs/context-map.md`
-- `docs/conventions.md`
+- `docs/README.md`
+- `docs/governance/governance.md`
+- `docs/governance/context-map.md`
+- `docs/governance/documentation.md`
+- `docs/governance/conventions.md`
 - `scripts/doctor`
 
 검증:
@@ -46,7 +49,7 @@
 
 - `AGENTS.md`
 - `README.md`
-- `docs/project-start.md`
+- `docs/workflows/project-start.md`
 - `templates/<template>/README.md`
 - `templates/<template>/AGENTS.md`
 - `scripts/new-project`
@@ -60,9 +63,9 @@
 읽을 파일:
 
 - `AGENTS.md`
-- `docs/governance.md`
-- `docs/async-workflow.md`
-- `docs/github.md`
+- `docs/governance/governance.md`
+- `docs/workflows/async-workflow.md`
+- `docs/operations/github.md`
 
 사용 prompt:
 
@@ -72,15 +75,47 @@
 - `prompts/async-address-review.md`
 - `prompts/async-final-report.md`
 
+### 하네스 정량 평가
+
+읽을 파일:
+
+- `AGENTS.md`
+- `README.md`
+- `projects/registry.md`
+- `docs/README.md`
+- `docs/governance/governance.md`
+- `docs/governance/context-map.md`
+- `docs/governance/documentation.md`
+- `docs/governance/improvement-loop.md`
+- `docs/governance/improvement-history.md`
+- `docs/evaluation/rubric.md`
+- `docs/evaluation/current-assessment.md`, 이전 평가와 비교할 때
+- `docs/governance/rules-and-skills.md`
+- `docs/skills/codex-skill-guidelines.md`
+- `docs/operations/environment.md`
+- 관련 `prompts/*.md`
+
+사용 prompt:
+
+- `prompts/evaluate-harness.md`
+
+검증:
+
+```bash
+./scripts/doctor
+```
+
 ### Skill 생성 또는 수정
 
 읽을 파일:
 
 - `AGENTS.md`
-- `docs/governance.md`
-- `docs/rules-and-skills.md`
-- `docs/skill-authoring.md`
-- `docs/skill-lifecycle.md`
+- `docs/governance/governance.md`
+- `docs/governance/rules-and-skills.md`
+- `docs/skills/package-contract.md`
+- `docs/skills/codex-skill-guidelines.md`
+- `docs/skills/skill-authoring.md`
+- `docs/skills/skill-lifecycle.md`
 - 관련 `skills/<skill-name>/SKILL.md`, 존재한다면
 
 사용 prompt:
@@ -99,8 +134,9 @@ python3 "${CODEX_HOME:-$HOME/.codex}/skills/.system/skill-creator/scripts/quick_
 읽을 파일:
 
 - `AGENTS.md`
-- `docs/governance.md`
-- `docs/context-map.md`
+- `docs/governance/governance.md`
+- `docs/governance/context-map.md`
+- `docs/governance/documentation.md`
 - 관련 기존 `prompts/*.md`
 
 판단 기준:
@@ -109,6 +145,7 @@ python3 "${CODEX_HOME:-$HOME/.codex}/skills/.system/skill-creator/scripts/quick_
 - 항상 적용되는 규칙이면 `AGENTS.md`에 둡니다.
 - 오래 유지되는 설명이면 `docs/`에 둡니다.
 - 전문 workflow package이면 `skills/`에 둡니다.
+- 반복 작업에서 얻은 학습이면 `docs/governance/improvement-loop.md` 기준으로 `docs/governance/improvement-history.md`에 기록할지 판단합니다.
 
 사용 prompt:
 
@@ -132,9 +169,9 @@ make check
 
 ## 읽지 않아도 되는 것
 
-- task와 무관한 모든 `docs/*.md`
+- task와 무관한 모든 `docs/**/*.md`
 - task와 무관한 모든 `prompts/*.md`
 - 다른 프로젝트의 `notes/`
 - installed skill 내부 파일, 해당 skill을 사용하지 않는 경우
 
-필요한 문서를 좁혀 읽고, source of truth가 불명확하면 `docs/governance.md`로 돌아갑니다.
+필요한 문서를 좁혀 읽고, source of truth가 불명확하면 `docs/governance/governance.md`로 돌아갑니다.

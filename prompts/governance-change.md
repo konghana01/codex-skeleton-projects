@@ -11,9 +11,12 @@ Change request:
 Context to read first:
 - AGENTS.md
 - README.md
-- docs/governance.md
-- docs/context-map.md
-- docs/conventions.md
+- docs/governance/governance.md
+- docs/governance/context-map.md
+- docs/governance/documentation.md
+- docs/governance/improvement-loop.md
+- docs/governance/improvement-history.md
+- docs/governance/conventions.md
 - 관련 docs/prompts/skills 파일
 
 Decide:

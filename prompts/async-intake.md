@@ -13,7 +13,7 @@ Context to read first:
 - AGENTS.md
 - notes/decisions.md
 - notes/todos.md
-- docs/async-workflow.md, if available
+- docs/workflows/async-workflow.md, if available
 
 Output:
 - Project:

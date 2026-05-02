@@ -9,11 +9,13 @@
 3. Governance and shared conventions: `docs/`
 4. Task prompts: `prompts/`
 5. Managed Codex skill sources: `skills/`
-6. Installed Codex skills: `$CODEX_HOME/skills` 또는 `~/.codex/skills`
+6. Repo-local exposed Codex skills: `.agents/skills`
+7. Claude Code project skill exposure: `.claude/skills`
+8. Installed Codex skills: `$CODEX_HOME/skills` 또는 `~/.codex/skills`
 
 문제를 명확히 해결하는 가장 낮은 계층을 선호합니다.
 
-계층 충돌이 있으면 `docs/governance.md`의 우선순위를 따릅니다.
+계층 충돌이 있으면 `docs/governance/governance.md`의 우선순위를 따릅니다.
 
 ## Rules
 
@@ -63,7 +65,7 @@ Skills는 specialized workflow를 위한 재사용 가능한 Codex capability입
 
 일회성 project preference를 위해 skill을 만들지 않습니다. 그런 내용은 프로젝트의 `AGENTS.md`에 둡니다.
 
-하네스에서 관리하는 skill source는 `skills/<skill-name>/`에 둡니다. `$CODEX_HOME/skills` 또는 `~/.codex/skills`는 Codex 실행을 위한 설치 위치입니다.
+하네스에서 관리하는 skill source는 `skills/<skill-name>/`에 둡니다. `.agents/skills/<skill-name>/`은 필요할 때 repo-local Codex discovery를 위해 노출하는 위치이고, `.claude/skills/<skill-name>/`은 Claude Code project skill 노출 위치입니다. `$CODEX_HOME/skills` 또는 `~/.codex/skills`는 현재 사용자 환경의 Codex 설치 위치입니다.
 
 ## Skill 형태
 
@@ -86,12 +88,18 @@ skill-name/
 
 1. 어떤 경우에 trigger되어야 하는지 concrete examples를 정의합니다.
 2. 재사용 가능한 부분이 rules, prompts, scripts, references, assets 중 어디에 속하는지 결정합니다.
-3. `$CODEX_HOME/skills` 또는 `~/.codex/skills` 아래에 skill을 생성합니다.
+3. `skills/<skill-name>/` 아래에 source package를 생성합니다.
 4. `SKILL.md`는 concise하고 procedural하게 유지합니다.
 5. skill을 신뢰하기 전에 validate합니다.
 
-skill이 project-local convention에 불과하다면 global로 설치하지 않습니다. `AGENTS.md`나 `docs/`에 기록합니다.
+skill이 project-local convention에 불과하다면 global로 설치하거나 `.agents/skills/`, `.claude/skills/`에 노출하지 않습니다. `AGENTS.md`나 `docs/`에 기록합니다.
 
-구체적인 `SKILL.md` 틀, resource 설계, `agents/openai.yaml` 기준은 `docs/skill-authoring.md`를 따릅니다.
+skill package 공통 계약과 Codex/Claude 노출 위치는 `docs/skills/package-contract.md`를 따릅니다.
 
-skill의 생성, 변경, review, 폐기 기준은 `docs/skill-lifecycle.md`를 따릅니다.
+공식 Codex skill 작성 팁과 `/skill-creator` 기준은 `docs/skills/codex-skill-guidelines.md`를 따릅니다.
+
+구체적인 `SKILL.md` 틀, resource 설계, `agents/openai.yaml` 기준은 `docs/skills/skill-authoring.md`를 따릅니다.
+
+skill의 생성, 변경, review, 폐기 기준은 `docs/skills/skill-lifecycle.md`를 따릅니다.
+
+하네스의 rules, skills, environment가 실제로 잘 구성되었는지는 `docs/evaluation/rubric.md` 기준으로 정량 평가합니다.

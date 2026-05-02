@@ -20,8 +20,8 @@ Context to read first:
 - notes/decisions.md
 - notes/todos.md
 - ../../AGENTS.md, if this project is under side-harness/projects/
-- ../../docs/project-start.md, if available
-- ../../docs/rules-and-skills.md, if available
+- ../../docs/workflows/project-start.md, if available
+- ../../docs/governance/rules-and-skills.md, if available
 
 Update:
 - README.md: goal, non-goals, first milestone, commands, environment variables, open questions를 정리해줘.

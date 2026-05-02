@@ -12,7 +12,7 @@ Context to read first:
 - README.md
 - AGENTS.md
 - notes/decisions.md
-- docs/async-workflow.md, if available
+- docs/workflows/async-workflow.md, if available
 
 Focus:
 - correctness bugs
