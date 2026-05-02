@@ -53,6 +53,7 @@ side-harness/
 - `templates/`는 `projects/`로 복사될 프로젝트 시작 템플릿을 담습니다.
 - `prompts/`는 구현, 리뷰, 디버깅, 리팩터링, 릴리스 점검에 쓰는 반복 가능한 작업 프롬프트를 담습니다.
 - `docs/project-start.md`는 프로젝트 목적을 받아 생성 프로젝트를 정리하는 startup contract를 정의합니다.
+- `docs/async-workflow.md`는 메신저형 입력, 구현 에이전트, 리뷰 에이전트, PR 중심의 비동기 작업 흐름을 정의합니다.
 - `docs/rules-and-skills.md`는 규칙, 프롬프트, Codex skill을 어디에 둘지 판단하는 기준입니다.
 - `docs/skill-authoring.md`는 Codex skill을 만들 때의 `SKILL.md` 구조와 resource 설계 기준입니다.
 - `docs/github.md`는 하네스 repo와 생성 프로젝트 repo를 분리해서 운영하는 기준입니다.
@@ -68,3 +69,15 @@ side-harness/
 5. 작고 검증 가능한 단위로 구현합니다.
 6. 작업 완료 전 프로젝트 검사 명령을 실행합니다.
 7. 결정과 다음 작업을 프로젝트의 `notes/` 폴더에 기록합니다.
+
+## 비동기 작업
+
+외부에서 작업을 요청하고 나중에 결과를 확인하는 흐름은 `docs/async-workflow.md`를 기준으로 합니다.
+
+기본 lifecycle은 다음과 같습니다.
+
+```text
+intake -> triage -> implement -> self-heal -> open-pr -> review -> address-review -> final-report
+```
+
+초기 운영은 GitHub issue와 PR을 기준으로 시작하고, Slack/KakaoTalk/Discord 같은 메신저는 나중에 입력 UI로 붙입니다.

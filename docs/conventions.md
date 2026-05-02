@@ -25,6 +25,8 @@ task는 다음 조건을 만족하면 완료입니다.
 - 건너뛴 검사가 문서화되어 있습니다.
 - 후속 작업이 암묵적으로 남지 않고 기록되어 있습니다.
 
+비동기 feature task는 PR 생성이 기본 종료점입니다. 리뷰 에이전트가 finding을 남겼다면, 해당 finding을 반영하고 다시 검증한 뒤 PR ready 상태를 전체 종료점으로 봅니다.
+
 ## Context 기준
 
 각 관리 프로젝트는 기억이 아니라 파일만으로 작업 컨텍스트가 드러나야 합니다.
@@ -54,3 +56,10 @@ task는 다음 조건을 만족하면 완료입니다.
 - 반복 가능한 task request는 `prompts/`에 둡니다.
 - 여러 프로젝트에 걸친 specialized workflow는 Codex skill에 둡니다.
 - 같은 behavior가 최소 두 개 프로젝트에서 반복된 뒤에 reusable script로 만듭니다.
+
+## Async 기준
+
+- 메신저는 입력과 알림 UI로만 사용합니다.
+- durable state는 GitHub issue, PR, commit, repo 문서에 둡니다.
+- 구현과 리뷰는 역할을 분리합니다.
+- main에는 직접 commit하지 않고 PR 중심으로 작업합니다.

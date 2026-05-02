@@ -26,6 +26,8 @@
 
 작고 검증 가능한 단계로 작업합니다. 넓지만 끝나지 않은 설계보다 좁아도 동작하는 경로를 선호합니다.
 
+외부에서 비동기로 진행하는 작업은 `docs/async-workflow.md`를 따릅니다. 기본 종료점은 PR 생성이고, 전체 기능 생명주기는 review finding 반영 후 PR ready 상태까지를 목표로 합니다.
+
 ## 4. 검증
 
 task를 완료로 보기 전에 local project checks를 실행합니다.

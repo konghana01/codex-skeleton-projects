@@ -71,3 +71,13 @@ gh repo create my-idea --private --source . --remote origin --push
 기본은 private repo를 권장합니다. 프로젝트가 공개되어도 되는 상태가 되었을 때 public으로 전환합니다.
 
 `.env`는 절대 commit하지 않습니다. 공유 가능한 예시는 `.env.example`에만 둡니다.
+
+## 비동기 작업과 PR
+
+비동기 기능 개발은 GitHub issue와 PR을 기준으로 운영합니다.
+
+- 사용자 요청은 issue 또는 task note로 정리합니다.
+- 구현은 branch에서 진행합니다.
+- 검증 가능한 상태가 되면 PR을 생성합니다.
+- 리뷰 에이전트는 PR diff를 기준으로 finding을 남깁니다.
+- finding 반영 후 PR ready 상태를 최종 작업 결과로 봅니다.
