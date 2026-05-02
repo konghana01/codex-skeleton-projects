@@ -44,6 +44,7 @@ side-harness/
   projects/
   prompts/
   scripts/
+  skills/
   templates/
 ```
 
@@ -52,11 +53,16 @@ side-harness/
 - `AGENTS.md`는 Codex와 다른 AI coding agent가 따라야 할 작업 규칙을 정의합니다.
 - `templates/`는 `projects/`로 복사될 프로젝트 시작 템플릿을 담습니다.
 - `prompts/`는 구현, 리뷰, 디버깅, 리팩터링, 릴리스 점검에 쓰는 반복 가능한 작업 프롬프트를 담습니다.
+- `prompts/governance-change.md`와 `prompts/skill-review.md`는 하네스 계층과 skill package를 검토하는 반복 작업 기준입니다.
+- `docs/governance.md`는 하네스의 최상위 문서/rule/skill 관리 원칙입니다.
+- `docs/context-map.md`는 Codex가 상황별로 어떤 문서를 읽어야 하는지 정의합니다.
 - `docs/project-start.md`는 프로젝트 목적을 받아 생성 프로젝트를 정리하는 startup contract를 정의합니다.
 - `docs/async-workflow.md`는 메신저형 입력, 구현 에이전트, 리뷰 에이전트, PR 중심의 비동기 작업 흐름을 정의합니다.
 - `docs/rules-and-skills.md`는 규칙, 프롬프트, Codex skill을 어디에 둘지 판단하는 기준입니다.
 - `docs/skill-authoring.md`는 Codex skill을 만들 때의 `SKILL.md` 구조와 resource 설계 기준입니다.
+- `docs/skill-lifecycle.md`는 repo에서 관리하는 skill package의 생성, 변경, 검증, 폐기 기준입니다.
 - `docs/github.md`는 하네스 repo와 생성 프로젝트 repo를 분리해서 운영하는 기준입니다.
+- `skills/`는 하네스가 source로 관리하는 엄격한 Codex skill package를 담습니다.
 - `scripts/new-project`는 템플릿에서 새 프로젝트를 생성합니다.
 - `scripts/doctor`는 하네스 구조와 기본 로컬 도구가 있는지 확인합니다.
 

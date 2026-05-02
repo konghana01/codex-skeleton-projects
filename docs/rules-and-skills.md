@@ -6,11 +6,14 @@
 
 1. Harness rules: root `AGENTS.md`
 2. Project rules: `projects/<name>/AGENTS.md`
-3. Shared conventions: `docs/`
+3. Governance and shared conventions: `docs/`
 4. Task prompts: `prompts/`
-5. Codex skills: `$CODEX_HOME/skills` 또는 `~/.codex/skills` 아래에 설치
+5. Managed Codex skill sources: `skills/`
+6. Installed Codex skills: `$CODEX_HOME/skills` 또는 `~/.codex/skills`
 
 문제를 명확히 해결하는 가장 낮은 계층을 선호합니다.
+
+계층 충돌이 있으면 `docs/governance.md`의 우선순위를 따릅니다.
 
 ## Rules
 
@@ -60,6 +63,8 @@ Skills는 specialized workflow를 위한 재사용 가능한 Codex capability입
 
 일회성 project preference를 위해 skill을 만들지 않습니다. 그런 내용은 프로젝트의 `AGENTS.md`에 둡니다.
 
+하네스에서 관리하는 skill source는 `skills/<skill-name>/`에 둡니다. `$CODEX_HOME/skills` 또는 `~/.codex/skills`는 Codex 실행을 위한 설치 위치입니다.
+
 ## Skill 형태
 
 skill은 작고 self-contained해야 합니다.
@@ -88,3 +93,5 @@ skill-name/
 skill이 project-local convention에 불과하다면 global로 설치하지 않습니다. `AGENTS.md`나 `docs/`에 기록합니다.
 
 구체적인 `SKILL.md` 틀, resource 설계, `agents/openai.yaml` 기준은 `docs/skill-authoring.md`를 따릅니다.
+
+skill의 생성, 변경, review, 폐기 기준은 `docs/skill-lifecycle.md`를 따릅니다.

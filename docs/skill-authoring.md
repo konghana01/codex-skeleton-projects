@@ -15,8 +15,10 @@ skill을 만들기 전에 먼저 이 질문에 답합니다.
 
 ## 권장 디렉토리
 
+하네스에서 source로 관리하는 skill은 `skills/<skill-name>/` 아래에 둡니다.
+
 ```text
-skill-name/
+skills/skill-name/
   SKILL.md
   agents/
     openai.yaml
@@ -26,6 +28,8 @@ skill-name/
 ```
 
 필수 파일은 `SKILL.md`뿐입니다. `agents/openai.yaml`은 UI metadata가 필요할 때 권장합니다. `scripts/`, `references/`, `assets/`는 직접 필요한 경우에만 만듭니다.
+
+`$CODEX_HOME/skills` 또는 `~/.codex/skills`는 설치 위치입니다. repo의 `skills/`는 검토 가능한 source of truth입니다.
 
 ## SKILL.md Frontmatter
 
@@ -161,3 +165,5 @@ python3 "${CODEX_HOME:-$HOME/.codex}/skills/.system/skill-creator/scripts/quick_
 `agents/openai.yaml`을 만들거나 수정했다면 `/skill-creator`의 `references/openai_yaml.md` 기준과 맞는지 확인합니다.
 
 복잡한 skill은 실제 요청 예시 1-2개로 forward-test하는 것을 권장합니다.
+
+생성, 변경, review, 폐기 lifecycle은 `docs/skill-lifecycle.md`를 따릅니다.

@@ -4,11 +4,18 @@
 
 ## 작업 전 확인
 
+- 하네스 안에서 작업 중이라면 root `AGENTS.md`를 먼저 읽습니다.
 - `README.md`를 읽습니다.
 - 이 `AGENTS.md`를 읽습니다.
 - 관련 context를 위해 `notes/decisions.md`를 확인합니다.
 - 현재 next task를 위해 `notes/todos.md`를 확인합니다.
 - 관련 없는 사용자 변경사항은 보존합니다.
+
+## 계층
+
+- 이 파일은 project-local rule입니다.
+- 하네스 root `AGENTS.md`와 충돌하면 root `AGENTS.md`가 우선합니다.
+- durable project context는 `README.md`와 `notes/decisions.md`에 둡니다.
 
 ## Project Startup
 

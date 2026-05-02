@@ -1,11 +1,11 @@
 # Skill 생성 프롬프트
 
-반복 workflow를 Codex skill로 만들어야 할 때 사용합니다. 작업 기준은 `/skill-creator`와 `docs/skill-authoring.md`입니다.
+반복 workflow를 Codex skill로 만들어야 할 때 사용합니다. 작업 기준은 `/skill-creator`, `docs/skill-authoring.md`, `docs/skill-lifecycle.md`입니다.
 
 ```text
 이 반복 workflow를 위한 Codex skill을 생성하거나 갱신해줘.
 
-skill 생성 과정의 source of truth는 `/skill-creator`로 삼고, Side Harness의 구조화 기준은 `docs/skill-authoring.md`를 따라줘.
+skill 생성 과정의 source of truth는 `/skill-creator`로 삼고, Side Harness의 구조화 기준은 `docs/skill-authoring.md`와 `docs/skill-lifecycle.md`를 따라줘.
 
 Workflow:
 - ...
@@ -33,13 +33,15 @@ Reusable resources, if known or recommended:
 - assets:
 
 Preferred location:
-- default to ${CODEX_HOME:-$HOME/.codex}/skills unless I specify another path.
+- default source package location: skills/<skill-name>/
+- install to ${CODEX_HOME:-$HOME/.codex}/skills only when explicitly asked.
 
 Context to read first:
 - /skill-creator
 - AGENTS.md
 - docs/rules-and-skills.md
 - docs/skill-authoring.md
+- docs/skill-lifecycle.md
 - any existing related skill, if one exists
 - relevant existing Codex system skills, if their structure is useful
 
@@ -47,7 +49,8 @@ Constraints:
 - workflow가 단일 프로젝트를 넘어 반복될 때만 skill을 만들어줘.
 - 먼저 이 workflow가 skill이 맞는지 판단하고, 아니라면 rule/prompt/docs 중 더 낮은 계층을 제안해줘.
 - `/skill-creator` workflow를 따라줘: examples 이해, reusable resources 계획, skill initialize 또는 update, concise instructions 작성, validate, iterate.
-- 새 skill은 가능하면 `/skill-creator`의 `init_skill.py`로 초기화해줘.
+- 새 skill source package는 `skills/<skill-name>/` 아래에 만들고, 가능하면 `/skill-creator`의 `init_skill.py`를 해당 경로에 맞게 사용해줘.
+- Codex 실행용 설치 위치인 `${CODEX_HOME:-$HOME/.codex}/skills`에는 내가 명시적으로 요청할 때만 설치해줘.
 - skill name은 lowercase hyphen-case, 64자 이하로 정규화해줘.
 - SKILL.md frontmatter는 `name`과 trigger 중심의 `description`을 반드시 포함해줘.
 - `description`에는 무엇을 하는지와 언제 사용해야 하는지를 모두 넣어줘. trigger 정보를 본문에만 숨기지 마.
