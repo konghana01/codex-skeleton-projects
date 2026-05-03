@@ -4,19 +4,9 @@
 
 repo-local exposure 위치인 `.agents/skills`, Claude Code exposure 위치인 `.claude/skills`, 설치 위치인 `$CODEX_HOME/skills` 또는 `~/.codex/skills`와 구분합니다. 여기는 검토 가능한 source package이고, 노출/설치 위치는 agent가 실행 중 읽는 배포 결과입니다. 노출 위치는 실제 skill이 있을 때만 만듭니다.
 
-## Package Shape
+## Current Packages
 
-```text
-skills/<skill-name>/
-  SKILL.md
-  agents/
-    openai.yaml
-  references/
-  scripts/
-  assets/
-```
-
-필수 파일은 `SKILL.md`입니다. 나머지 directory는 필요할 때만 둡니다.
+- `project-startup`: 새로 만들거나 clone한 프로젝트의 초기 정리 workflow
 
 ## Rules
 

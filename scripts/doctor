@@ -84,6 +84,7 @@ check_path prompts/create-skill.md
 check_path prompts/governance-change.md
 check_path prompts/skill-review.md
 check_path skills/README.md
+check_path skills/project-startup/SKILL.md
 check_path scripts/new-project
 check_path templates/scratch/README.md
 check_path templates/scratch/AGENTS.md
