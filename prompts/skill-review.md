@@ -12,9 +12,7 @@ Context to read first:
 - AGENTS.md
 - docs/governance/governance.md
 - docs/governance/rules-and-skills.md
-- docs/skills/package-contract.md
-- docs/skills/skill-authoring.md
-- docs/skills/skill-lifecycle.md
+- docs/skills/skill-guide.md
 - skills/<skill-name>/SKILL.md
 - skills/<skill-name>/agents/openai.yaml, if present
 

@@ -54,50 +54,6 @@ Prompts는 반복 가능한 task request입니다. 여러 프로젝트에서 같
 
 ## Skills
 
-Skills는 specialized workflow를 위한 재사용 가능한 Codex capability입니다. workflow가 충분히 반복되어 prompt만으로 부족할 때만 skill을 만듭니다.
-
-다음 경우에 skill을 사용합니다.
-
-- workflow가 여러 프로젝트에 걸쳐 적용됩니다.
-- specialized domain 또는 tool knowledge가 필요합니다.
-- deterministic scripts 또는 assets가 반복 실수를 줄입니다.
-- 같은 instruction이 prompt로 감당하기 어려울 만큼 길어집니다.
-
-일회성 project preference를 위해 skill을 만들지 않습니다. 그런 내용은 프로젝트의 `AGENTS.md`에 둡니다.
-
-하네스에서 관리하는 skill source는 `skills/<skill-name>/`에 둡니다. `.agents/skills/<skill-name>/`은 필요할 때 repo-local Codex discovery를 위해 노출하는 위치이고, `.claude/skills/<skill-name>/`은 Claude Code project skill 노출 위치입니다. `$CODEX_HOME/skills` 또는 `~/.codex/skills`는 현재 사용자 환경의 Codex 설치 위치입니다.
-
-## Skill 형태
-
-skill은 작고 self-contained해야 합니다.
-
-```text
-skill-name/
-  SKILL.md
-  agents/openai.yaml
-  scripts/
-  references/
-  assets/
-```
-
-필수 파일은 `SKILL.md`뿐입니다. `scripts/`, `references/`, `assets/`는 workflow를 직접 지원할 때만 추가합니다.
-
-## Skill 생성 기준
-
-새 Codex skill을 만들 때는 다음 기준을 따릅니다.
-
-1. 어떤 경우에 trigger되어야 하는지 concrete examples를 정의합니다.
-2. 재사용 가능한 부분이 rules, prompts, scripts, references, assets 중 어디에 속하는지 결정합니다.
-3. `skills/<skill-name>/` 아래에 source package를 생성합니다.
-4. `SKILL.md`는 concise하고 procedural하게 유지합니다.
-5. skill을 신뢰하기 전에 validate합니다.
-
-skill이 project-local convention에 불과하다면 global로 설치하거나 `.agents/skills/`, `.claude/skills/`에 노출하지 않습니다. `AGENTS.md`나 `docs/`에 기록합니다.
-
-skill package 공통 계약과 Codex/Claude 노출 위치는 `docs/skills/package-contract.md`를 따릅니다.
-
-구체적인 `SKILL.md` 틀, resource 설계, `agents/openai.yaml` 기준은 `docs/skills/skill-authoring.md`를 따릅니다.
-
-skill의 생성, 변경, review, 폐기 기준은 `docs/skills/skill-lifecycle.md`를 따릅니다.
+Skills는 multiple projects에 걸쳐 반복되는 workflow를 위한 재사용 가능한 capability입니다. prompt만으로 품질이 흔들릴 때만 skill로 승격하고, 상세 기준은 `docs/skills/skill-guide.md` 하나만 봅니다.
 
 하네스의 rules, skills, environment가 실제로 잘 구성되었는지는 `docs/evaluation/rubric.md` 기준으로 정량 평가합니다.

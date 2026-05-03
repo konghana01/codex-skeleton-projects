@@ -1,11 +1,11 @@
 # Skill 생성 프롬프트
 
-반복 workflow를 Codex skill로 만들어야 할 때 사용합니다. 작업 기준은 `/skill-creator`, `docs/skills/package-contract.md`, `docs/skills/skill-authoring.md`, `docs/skills/skill-lifecycle.md`입니다.
+반복 workflow를 Codex skill로 만들어야 할 때 사용합니다. 작업 기준은 `/skill-creator`와 `docs/skills/skill-guide.md`입니다.
 
 ```text
 이 반복 workflow를 위한 Codex skill을 생성하거나 갱신해줘.
 
-skill 생성 과정의 source of truth는 `/skill-creator`로 삼고, package 공통 계약은 `docs/skills/package-contract.md`, Side Harness의 구조화 기준은 `docs/skills/skill-authoring.md`와 `docs/skills/skill-lifecycle.md`를 따라줘.
+skill 생성 과정의 source of truth는 `/skill-creator`로 삼고, Side Harness의 기준은 `docs/skills/skill-guide.md`를 따라줘.
 
 Workflow:
 - ...
@@ -42,9 +42,7 @@ Context to read first:
 - /skill-creator
 - AGENTS.md
 - docs/governance/rules-and-skills.md
-- docs/skills/package-contract.md
-- docs/skills/skill-authoring.md
-- docs/skills/skill-lifecycle.md
+- docs/skills/skill-guide.md
 - any existing related skill, if one exists
 - relevant existing Codex system skills, if their structure is useful
 

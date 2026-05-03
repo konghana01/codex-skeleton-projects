@@ -94,7 +94,7 @@ skill은 다음 조건을 만족할 때만 만듭니다.
 
 skill은 하네스의 철학을 override하지 않습니다. skill은 하네스 철학을 구체적 workflow로 실행합니다.
 
-Codex skill을 만들거나 수정할 때는 `/skill-creator`, `docs/skills/package-contract.md`, `docs/skills/skill-authoring.md`, `docs/skills/skill-lifecycle.md`를 먼저 읽습니다. 공식 문서나 product behavior가 바뀌었을 가능성이 있으면 공식 문서를 다시 확인합니다.
+Codex skill을 만들거나 수정할 때는 `/skill-creator`와 `docs/skills/skill-guide.md`를 먼저 읽습니다. 공식 문서나 product behavior가 바뀌었을 가능성이 있으면 공식 문서를 다시 확인합니다.
 
 ## 변경 절차
 

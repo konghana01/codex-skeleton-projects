@@ -70,9 +70,7 @@ check_path docs/workflows/async-workflow.md
 check_path docs/workflows/project-start.md
 check_path docs/evaluation/rubric.md
 check_path docs/governance/rules-and-skills.md
-check_path docs/skills/package-contract.md
-check_path docs/skills/skill-authoring.md
-check_path docs/skills/skill-lifecycle.md
+check_path docs/skills/skill-guide.md
 check_path docs/operations/environment.md
 check_path docs/operations/github.md
 check_path projects/registry.md

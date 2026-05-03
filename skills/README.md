@@ -14,6 +14,4 @@ repo-local exposure 위치인 `.agents/skills`, Claude Code exposure 위치인 `
 - skill name은 lowercase hyphen-case를 사용합니다.
 - package 내부에 관련 reference, script, asset을 응집시킵니다.
 - root `AGENTS.md`와 `docs/governance/governance.md`를 override하지 않습니다.
-- package 공통 계약은 `docs/skills/package-contract.md`를 따릅니다.
-- 작성 형식과 trigger 검토는 `docs/skills/skill-authoring.md`를 따릅니다.
-- 생성과 수정 기준은 `docs/skills/skill-lifecycle.md`를 따릅니다.
+- package, 작성 형식, trigger, lifecycle 기준은 `docs/skills/skill-guide.md`를 따릅니다.

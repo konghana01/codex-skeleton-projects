@@ -86,8 +86,7 @@
 - `docs/governance/improvement-history.md`
 - `docs/evaluation/rubric.md`
 - `docs/governance/rules-and-skills.md`
-- `docs/skills/package-contract.md`
-- `docs/skills/skill-authoring.md`
+- `docs/skills/skill-guide.md`
 - `docs/operations/environment.md`
 - 관련 `prompts/*.md`
 
@@ -108,9 +107,7 @@
 - `AGENTS.md`
 - `docs/governance/governance.md`
 - `docs/governance/rules-and-skills.md`
-- `docs/skills/package-contract.md`
-- `docs/skills/skill-authoring.md`
-- `docs/skills/skill-lifecycle.md`
+- `docs/skills/skill-guide.md`
 - 관련 `skills/<skill-name>/SKILL.md`, 존재한다면
 
 사용 prompt:

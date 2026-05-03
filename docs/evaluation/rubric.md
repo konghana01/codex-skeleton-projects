@@ -9,7 +9,7 @@
 1. 현재 Codex 세션의 system/developer 지침
 2. 이 repo의 root `AGENTS.md`
 3. `docs/governance/governance.md`, `docs/governance/context-map.md`, `docs/governance/rules-and-skills.md`
-4. `docs/skills/package-contract.md`, `docs/skills/skill-authoring.md`, `docs/skills/skill-lifecycle.md`
+4. `docs/skills/skill-guide.md`
 5. OpenAI 공식 Codex 문서
 
 공식 문서는 product behavior가 바뀔 수 있으므로 평가 시점에 다시 확인합니다.
@@ -119,9 +119,7 @@ Codex가 만든 결과가 실제로 동작하고, 실패를 숨기지 않고, PR
 
 확인할 파일:
 
-- `docs/skills/package-contract.md`
-- `docs/skills/skill-authoring.md`
-- `docs/skills/skill-lifecycle.md`
+- `docs/skills/skill-guide.md`
 - `docs/governance/rules-and-skills.md`
 - `docs/operations/environment.md`
 - `docs/operations/github.md`
