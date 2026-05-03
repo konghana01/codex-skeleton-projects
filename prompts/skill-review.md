@@ -13,7 +13,6 @@ Context to read first:
 - docs/governance/governance.md
 - docs/governance/rules-and-skills.md
 - docs/skills/package-contract.md
-- docs/skills/codex-skill-guidelines.md
 - docs/skills/skill-authoring.md
 - docs/skills/skill-lifecycle.md
 - skills/<skill-name>/SKILL.md

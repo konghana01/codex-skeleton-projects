@@ -94,7 +94,7 @@ skill은 다음 조건을 만족할 때만 만듭니다.
 
 skill은 하네스의 철학을 override하지 않습니다. skill은 하네스 철학을 구체적 workflow로 실행합니다.
 
-Codex skill을 만들거나 수정할 때는 `/skill-creator`, `docs/skills/package-contract.md`, `docs/skills/codex-skill-guidelines.md`를 먼저 읽습니다. 공식 문서나 product behavior가 바뀌었을 가능성이 있으면 공식 문서를 다시 확인합니다.
+Codex skill을 만들거나 수정할 때는 `/skill-creator`, `docs/skills/package-contract.md`, `docs/skills/skill-authoring.md`, `docs/skills/skill-lifecycle.md`를 먼저 읽습니다. 공식 문서나 product behavior가 바뀌었을 가능성이 있으면 공식 문서를 다시 확인합니다.
 
 ## 변경 절차
 
@@ -109,7 +109,7 @@ Codex skill을 만들거나 수정할 때는 `/skill-creator`, `docs/skills/pack
 7. `./scripts/doctor`를 실행합니다.
 
 반복 가능한 거버넌스 변경에는 `prompts/governance-change.md`를 사용합니다. skill package review에는 `prompts/skill-review.md`를 사용합니다.
-하네스 자체의 정량 평가는 `docs/evaluation/rubric.md`와 `prompts/evaluate-harness.md`를 사용하고, 현재 결과는 `docs/evaluation/current-assessment.md`에 둡니다.
+하네스 자체의 정량 평가는 `docs/evaluation/rubric.md`와 `prompts/evaluate-harness.md`를 사용합니다. 평가 결과는 PR, issue, 또는 필요할 때 별도 기록으로 남깁니다.
 
 ## 완료 기준
 

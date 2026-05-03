@@ -233,10 +233,7 @@ Review: 2개 finding 반영 완료
 1차 범위:
 
 - issue/task intake 포맷
-- implementer prompt
-- reviewer prompt
-- review 반영 prompt
-- PR report 포맷
+- `prompts/async-task.md`의 mode별 intake, implement, review, address-review, final-report
 
 2차 범위:
 

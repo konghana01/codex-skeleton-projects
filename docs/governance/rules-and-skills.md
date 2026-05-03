@@ -96,8 +96,6 @@ skill이 project-local convention에 불과하다면 global로 설치하거나 `
 
 skill package 공통 계약과 Codex/Claude 노출 위치는 `docs/skills/package-contract.md`를 따릅니다.
 
-공식 Codex skill 작성 팁과 `/skill-creator` 기준은 `docs/skills/codex-skill-guidelines.md`를 따릅니다.
-
 구체적인 `SKILL.md` 틀, resource 설계, `agents/openai.yaml` 기준은 `docs/skills/skill-authoring.md`를 따릅니다.
 
 skill의 생성, 변경, review, 폐기 기준은 `docs/skills/skill-lifecycle.md`를 따릅니다.

@@ -9,8 +9,8 @@ Claude에서도 skill은 package directory가 convention입니다. Anthropic 공
 따라서 Side Harness의 기본 원칙은 다음과 같습니다.
 
 - canonical source는 `skills/<skill-name>/`입니다.
-- Codex repo-local exposure는 `.agents/skills/<skill-name>/`입니다.
-- Claude Code project exposure는 `.claude/skills/<skill-name>/`입니다.
+- Codex repo-local exposure는 `.agents/skills/<skill-name>/`입니다. 실제 노출할 skill이 있을 때만 디렉토리를 만듭니다.
+- Claude Code project exposure는 `.claude/skills/<skill-name>/`입니다. 실제 노출할 skill이 있을 때만 디렉토리를 만듭니다.
 - local personal install은 tool별 위치를 사용합니다.
 - source를 먼저 고치고, exposure/install 위치는 필요할 때 명시적으로 동기화합니다.
 - `skills/` 아래에는 실제 managed skill source만 둡니다. template, example, placeholder package는 두지 않습니다.

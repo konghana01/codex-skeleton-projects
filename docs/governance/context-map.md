@@ -69,11 +69,7 @@
 
 사용 prompt:
 
-- `prompts/async-intake.md`
-- `prompts/async-implementer.md`
-- `prompts/async-reviewer.md`
-- `prompts/async-address-review.md`
-- `prompts/async-final-report.md`
+- `prompts/async-task.md`
 
 ### 하네스 정량 평가
 
@@ -89,9 +85,9 @@
 - `docs/governance/improvement-loop.md`
 - `docs/governance/improvement-history.md`
 - `docs/evaluation/rubric.md`
-- `docs/evaluation/current-assessment.md`, 이전 평가와 비교할 때
 - `docs/governance/rules-and-skills.md`
-- `docs/skills/codex-skill-guidelines.md`
+- `docs/skills/package-contract.md`
+- `docs/skills/skill-authoring.md`
 - `docs/operations/environment.md`
 - 관련 `prompts/*.md`
 
@@ -113,7 +109,6 @@
 - `docs/governance/governance.md`
 - `docs/governance/rules-and-skills.md`
 - `docs/skills/package-contract.md`
-- `docs/skills/codex-skill-guidelines.md`
 - `docs/skills/skill-authoring.md`
 - `docs/skills/skill-lifecycle.md`
 - 관련 `skills/<skill-name>/SKILL.md`, 존재한다면

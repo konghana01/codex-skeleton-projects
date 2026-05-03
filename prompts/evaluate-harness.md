@@ -24,10 +24,10 @@ Context to read first:
 - docs/governance/improvement-loop.md
 - docs/governance/improvement-history.md
 - docs/evaluation/rubric.md
-- docs/evaluation/current-assessment.md
 - docs/governance/rules-and-skills.md
 - docs/skills/package-contract.md
-- docs/skills/codex-skill-guidelines.md
+- docs/skills/skill-authoring.md
+- docs/skills/skill-lifecycle.md
 - docs/operations/environment.md
 - docs/workflows/async-workflow.md, 비동기 작업 평가가 포함된다면
 - templates/<template>/AGENTS.md, 생성 프로젝트 품질을 평가한다면

@@ -21,7 +21,7 @@ skill source, repo-local exposure, Claude exposure, local install 위치는 `doc
 ## 생성 절차
 
 1. `prompts/create-skill.md`를 사용합니다.
-2. `/skill-creator`, `docs/skills/package-contract.md`, `docs/skills/codex-skill-guidelines.md`를 기준으로 skill을 초기화합니다.
+2. `/skill-creator`, `docs/skills/package-contract.md`, `docs/skills/skill-authoring.md`를 기준으로 skill을 초기화합니다.
 3. source 위치는 기본적으로 `skills/<skill-name>/`를 사용합니다.
 4. `SKILL.md`의 `description`에 trigger 조건을 구체적으로 씁니다.
 5. 필요한 resource만 추가합니다.
