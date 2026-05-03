@@ -76,7 +76,7 @@ side-harness/
 - `docs/workflows/async-workflow.md`는 메신저형 입력, 구현 에이전트, 리뷰 에이전트, PR 중심의 비동기 작업 흐름을 정의합니다.
 - `docs/evaluation/rubric.md`는 공식 Codex 기준을 참고해 rules, skills, prompts, environment를 100점 만점으로 평가하는 기준입니다.
 - `docs/governance/rules-and-skills.md`는 규칙, 프롬프트, Codex skill을 어디에 둘지 판단하는 기준입니다.
-- `docs/skills/skill-guide.md`는 Codex skill의 package, `SKILL.md`, resource, lifecycle을 한 곳에서 정의합니다.
+- `docs/skills/skill-guide.md`는 Codex skill의 source, `SKILL.md`, resource, lifecycle을 한 곳에서 정의합니다.
 - `docs/operations/github.md`는 하네스 repo와 생성 프로젝트 repo를 분리해서 운영하는 기준입니다.
 - `skills/`는 하네스가 source로 관리하는 엄격한 Codex skill package를 담습니다.
 - `.agents/skills/`와 `.claude/skills/`는 실제 skill을 노출해야 할 때만 생성합니다.
@@ -86,6 +86,14 @@ side-harness/
 ## 하네스 평가
 
 하네스 품질을 점검할 때는 `docs/evaluation/rubric.md`와 `prompts/evaluate-harness.md`를 사용합니다. 평가 결과는 PR, issue, 또는 필요할 때 별도 기록으로 남깁니다.
+
+## 문서와 프롬프트
+
+- `docs/README.md`는 `docs/`의 역할별 인덱스입니다.
+- `docs/governance/context-map.md`는 상황별로 어떤 문서와 프롬프트를 읽을지 정하는 실행 인덱스입니다.
+- `prompts/`는 반복 작업을 시작할 때 넣는 task template입니다.
+- `skills/`는 반복되는 전문 workflow를 담는 managed package source입니다.
+- `docs/skills/skill-guide.md`는 skill 구조와 lifecycle의 단일 기준입니다.
 
 ## 프로젝트 흐름
 
