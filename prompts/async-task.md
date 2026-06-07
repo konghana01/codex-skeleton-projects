@@ -24,6 +24,7 @@ Shared constraints:
 - 관련 없는 사용자 변경사항은 보존해줘.
 - secret, billing, production data, destructive action이 관련되면 승인 필요로 표시해줘.
 - 실패한 check를 숨기지 말고 원인과 blocker를 기록해줘.
+- Codex App을 기본 실행 표면으로 사용해줘. oh-my-codex가 설치되어 있으면 App 안의 `$plan`, `$code-review` 같은 skill/workflow discovery를 선택적으로 사용하되, `omx exec`/`omx team` 같은 CLI runtime은 내가 명시했거나 꼭 필요할 때만 사용해줘.
 
 Mode details:
 

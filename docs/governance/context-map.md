@@ -64,12 +64,36 @@
 
 - `AGENTS.md`
 - `docs/governance/governance.md`
+- `docs/operations/environment.md`
 - `docs/workflows/async-workflow.md`
 - `docs/operations/github.md`
 
 사용 prompt:
 
 - `prompts/async-task.md`
+
+### Codex App에서 OMX 사용
+
+읽을 파일:
+
+- `AGENTS.md`
+- `docs/operations/environment.md`
+- 작업에 맞는 `prompts/*.md`
+- 관련 `skills/<skill-name>/SKILL.md`, repo-managed skill을 쓰는 경우
+
+사용 기준:
+
+- 기본 작업은 Codex App 안에서 처리합니다.
+- oh-my-codex가 설치되어 있으면 `/skills`, `$plan`, `$code-review` 같은 App 안 skill/workflow discovery를 선택적으로 사용합니다.
+- `omx setup`, `omx update`, `omx doctor`, `omx list`는 관리 명령으로 사용합니다.
+- `omx exec`, `omx team`, HUD, tmux/sidecar runtime은 사용자가 CLI runtime을 명시했거나 task가 그 runtime을 실제로 요구할 때만 사용합니다.
+
+검증:
+
+```bash
+./scripts/doctor
+omx doctor
+```
 
 ### 하네스 정량 평가
 

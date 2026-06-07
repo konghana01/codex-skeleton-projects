@@ -18,6 +18,25 @@
 - 구현과 리뷰는 역할을 분리합니다. 같은 에이전트가 구현과 최종 리뷰를 모두 신뢰하지 않습니다.
 - 자동화는 검증을 통과한 결과만 제안합니다. 실패를 숨기지 않고 blocker로 기록합니다.
 - 사람이 승인해야 하는 지점은 명확히 둡니다.
+- Codex App을 기본 실행 표면으로 둡니다. oh-my-codex는 App 안 skill/workflow discovery와 관리 명령 중심의 optional accelerator로 사용합니다.
+
+## Codex App-first OMX 사용
+
+OMX가 설치되어 있다면 다음처럼 보조 표면으로 사용합니다.
+
+- `triage`: Codex App에서 `$plan` 또는 repo prompt로 acceptance criteria와 verification plan을 정리합니다.
+- `implement`: Codex App의 일반 구현 흐름을 기본으로 하고, 긴 self-heal loop가 필요할 때만 App-safe workflow를 선택합니다.
+- `review`: `$code-review` 또는 `prompts/review.md`로 PR/diff review를 수행합니다.
+- `status`: `omx doctor`, `omx list`로 설치 상태와 사용 가능한 skill/agent catalog를 확인합니다.
+
+다음 기능은 CLI runtime opt-in으로 취급합니다.
+
+- `omx exec`
+- `omx team`
+- HUD, sidecar, tmux pane orchestration
+- 장기 runtime state에 의존하는 workflow
+
+이 기능들은 사용자가 CLI runtime을 명시했거나, App 안 실행만으로는 목표를 안정적으로 달성하기 어렵다는 근거가 있을 때만 사용합니다.
 
 ## 구성 요소
 

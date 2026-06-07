@@ -54,6 +54,7 @@ check_cmd_optional node
 check_cmd_optional npm
 check_cmd_optional pnpm
 check_cmd_optional python3
+check_cmd_optional omx
 
 echo
 check_path README.md

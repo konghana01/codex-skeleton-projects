@@ -129,7 +129,8 @@ Claude Code는 `SKILL.md` frontmatter의 `name`과 `description`을 기준으로
 - 같은 workflow가 여러 프로젝트에서 반복됩니다.
 - prompt만으로는 품질이 흔들립니다.
 - 구체적인 trigger 예시와 non-trigger 예시가 있습니다.
-- skill package 안에 모아둘 reference, script, asset 중 하나 이상이 실제로 유용합니다.
+- instruction-only skill로도 절차와 trigger 품질이 충분히 좋아집니다.
+- 복잡한 reference, deterministic operation, output template이 실제로 유용할 때만 `references/`, `scripts/`, `assets/`를 추가합니다.
 - validation 방법이 있습니다.
 
 조건을 만족하지 않으면 `AGENTS.md`, `docs/`, `prompts/` 중 더 낮은 비용의 계층을 사용합니다.
@@ -177,7 +178,7 @@ skill review는 code review와 다르게 trigger 품질을 우선합니다. 반�
 - trigger가 모호해서 잘못 호출됩니다.
 - 유지 비용이 반복 이득보다 큽니다.
 - `SKILL.md`가 단순 prompt와 다르지 않습니다.
-- resource가 없고 절차도 짧습니다.
+- resource가 없고 trigger/절차가 단순 prompt와 구분되지 않습니다.
 
 폐기할 때는 해당 workflow가 이동한 위치를 `docs/governance/rules-and-skills.md` 또는 관련 prompt에 남깁니다.
 

@@ -23,10 +23,11 @@ A new project becomes useful only after its purpose, first milestone, checks, an
 
 ## Workflow
 
-1. Read the project `README.md`, `AGENTS.md`, `notes/decisions.md`, and `notes/todos.md`.
-2. Read `prompts/start-project.md` and `docs/workflows/project-start.md`.
-3. Keep the project goal, non-goals, first milestone, commands, and environment explicit.
-4. Update only durable files:
+1. Read the project `README.md` and `AGENTS.md` when present.
+2. Read `notes/decisions.md` and `notes/todos.md` when present; for cloned projects without `notes/`, create durable notes only when the startup pass needs them.
+3. Read `prompts/start-project.md` and `docs/workflows/project-start.md`.
+4. Keep the project goal, non-goals, first milestone, commands, and environment explicit.
+5. Update only durable files:
    - `README.md`
    - `AGENTS.md`
    - `notes/decisions.md`
@@ -35,7 +36,7 @@ A new project becomes useful only after its purpose, first milestone, checks, an
    - `.env.example` only when needed
    - `Makefile` only when a real check exists
    - `projects/registry.md` only for managed projects
-5. Keep the first useful outcome narrow and the checks real.
+6. Keep the first useful outcome narrow and the checks real.
 
 ## Validation
 
